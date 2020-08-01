@@ -3,7 +3,7 @@
 
 namespace owt = onewiretemp;
 
-// pins and addresses; these need changing to replicate this!
+// pins and addresses; exit these to run this example
 const int pin_data = 8;
 owt::Address address = {0x22, 0xB, 0xEA, 0x61, 0x0, 0x0, 0x0, 0x15};
 
@@ -27,22 +27,6 @@ void show_addresses() {
 
 void setup() {
   Serial.begin(115200);
-
-  { // power on the sensors
-    const int pin_power_1 = 9;
-    const int pin_power_2 = 7;
-    const int pin_pull_up = 10;
-
-    pinMode(pin_power_1, OUTPUT);
-    digitalWrite(pin_power_1, 1);
-    pinMode(pin_power_2, OUTPUT);
-    digitalWrite(pin_power_2, 1);
-
-    pinMode(pin_pull_up, OUTPUT);
-    digitalWrite(pin_pull_up, 1);
-
-    delay(10);
-  }
 
   show_addresses();
 
