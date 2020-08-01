@@ -85,8 +85,8 @@ void check_multiple() {
   for (auto &sensor : sensors)
     bus.configure(sensor);
 
-  bus.start_conversion(ow);
-  bus.wait_for_conversion(ow, delay);
+  check(bus.start_conversion(ow) == owt::Error::NO_ERROR);
+  check(bus.wait_for_conversion(ow, delay) == owt::Error::NO_ERROR);
 
   for (auto &sensor : sensors) {
     float temp_c;
