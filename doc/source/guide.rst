@@ -1,3 +1,5 @@
+.. cpp:namespace:: onewiretemp
+
 User Guide
 ----------
 

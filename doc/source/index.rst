@@ -1,5 +1,3 @@
-.. cpp:namespace:: onewiretemp
-
 onewiretemp
 ===========
 
