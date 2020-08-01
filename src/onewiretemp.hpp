@@ -5,6 +5,7 @@
 
 namespace onewiretemp {
 
+/// Address of a one-wire device
 using Address = std::array<uint8_t, 8>;
 
 class OneWireDevice {
@@ -14,23 +15,32 @@ public:
   Address address;
 };
 
+/// Power supply configuration
 enum class PowerMode {
   UNKNOWN = 0,
   PARASITIC = 1,
   EXTERNAL = 2,
 };
 
+/// Errors that can occur
 enum class Error {
   NO_ERROR = 0,
+  /// the 1-wire library indicated an error
   ONE_WIRE = 1,
+  /// checksum failed
   CHECKSUM = 2,
+  /// power mode not set; call `probe` or `probe_power_mode` first.
   UKNNOWN_POWER_MODE = 3,
+  /// resolution not known; call `probe` or `configure` first.
   UKNNOWN_RESOLUTION = 4,
+  /// eeprom verification failed during configuration
   VERIFICATION_FAILED = 5,
+  /// when reading the temperature, the resolution wasn't what we expected;
+  /// this could mean that we didn't wait long enough
   UNEXPECTED_RESOLUTION = 6,
 };
 
-/// commands
+// commands
 const uint8_t SEARCH_ROM = 0xF0;
 const uint8_t READ_ROM = 0x33;
 const uint8_t MATCH_ROM = 0x55;
