@@ -35,9 +35,12 @@ To get these, add this line to `platformio.ini`:
 
     lib_deps = https://github.com/mike-matera/ArduinoSTL.git, https://github.com/PaulStoffregen/OneWire.git
 
-## API
+## Documentation
 
-Documentation coming soon; for now, see the examples, tests and code.
+A user guide and some API documentation is available at
+[onewiretemp.rtfd.io](https://onewiretemp.rtfd.io/).
+
+It might be worth taking a look at the examples and tests, too.
 
 ## License
 
